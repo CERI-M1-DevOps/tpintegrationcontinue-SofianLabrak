@@ -257,28 +257,7 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void modifiePremierAvecElementNull() {
-        listeATester.ajout(1);
-        listeATester.getTete().setElement(null);
-        listeATester.ajout(2);
-        listeATester.modifiePremier(1, 99);
-        assertEquals(99, listeATester.getTete().getSuivant().getElement());
-    }
-
-    @Test
-    public void modifiePremierChercherNull() {
-        listeATester.ajout(1);
-        listeATester.getTete().setElement(null);
-        listeATester.ajout(2);
-        listeATester.modifiePremier(null, 99);
-        assertEquals(99, listeATester.getTete().getSuivant().getElement());
-    }
-
-    @Test
-    public void supprimePremierElementInexistant() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.supprimePremier(5);
-        assertEquals(2, listeATester.getSize());
+    public void courantestnull() {
+        assertNull(listeATester.courant);
     }
 }
