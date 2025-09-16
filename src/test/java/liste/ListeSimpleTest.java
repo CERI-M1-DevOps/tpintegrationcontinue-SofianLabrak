@@ -115,7 +115,7 @@ public class ListeSimpleTest {
     @Test
     public void supprimeTousListeVide() {
         listeATester.supprimePremier(1);
-        assertNull(listeATester.getTete());
+        assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
     }
 
@@ -190,7 +190,7 @@ public class ListeSimpleTest {
     @Test
     public void inverserListeVide() {
         listeATester.inverser();
-        assertNull(listeATester.getTete());
+        assertNull(listeATester.tete);
     }
 
     @Test
@@ -244,11 +244,11 @@ public class ListeSimpleTest {
     @Test
     public void echangerLePremierEnSecondArgumentNoeudAvecUnAutre() {
         listeATester.ajout(5);
-        listeATester.ajout(4);
+        Noeud r1 = listeATester.tete;
         Noeud r1 = listeATester.tete;
         listeATester.ajout(3);
         listeATester.ajout(2);
-        listeATester.ajout(1);
+        Noeud r2 = listeATester.tete;
         Noeud r2 = listeATester.tete;
         assertEquals(listeATester.toString(), "ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4), Noeud(5))");
         listeATester.echanger(r1, r2);
@@ -257,7 +257,28 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void courantestnull() {
-        assertNull(listeATester.courant);
+        listeATester.tete.setElement(null);
+        listeATester.ajout(1);
+        listeATester.getTete().setElement(null);
+        assertEquals(99, listeATester.tete.getSuivant().getElement());
+        listeATester.modifiePremier(1, 99);
+        assertEquals(99, listeATester.getTete().getSuivant().getElement());
+    }
+
+    @Test
+        listeATester.tete.setElement(null);
+        listeATester.ajout(1);
+        listeATester.getTete().setElement(null);
+        assertEquals(99, listeATester.tete.getSuivant().getElement());
+        listeATester.modifiePremier(null, 99);
+        assertEquals(99, listeATester.getTete().getSuivant().getElement());
+    }
+
+    @Test
+    public void supprimePremierElementInexistant() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.supprimePremier(5);
+        assertEquals(2, listeATester.getSize());
     }
 }
