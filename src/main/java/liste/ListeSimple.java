@@ -1,7 +1,5 @@
 package liste;
 
-import java.util.Objects;
-
 public class ListeSimple {
     private long size;
     Noeud tete;
@@ -17,7 +15,7 @@ public class ListeSimple {
 
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
-        while (courant != null && !Objects.equals(courant.getElement(), element))
+        while (courant != null && courant.getElement() != element)
             courant = courant.getSuivant();
         if (courant != null)
             courant.setElement(nouvelleValeur);
@@ -26,7 +24,7 @@ public class ListeSimple {
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
-            if (Objects.equals(courant.getElement(), element))
+            if (courant.getElement() == element)
                 courant.setElement(nouvelleValeur);
             courant = courant.getSuivant();
         }
@@ -47,7 +45,7 @@ public class ListeSimple {
 
     public void supprimePremier(Object element) {
         if (tete != null) {
-            if (Objects.equals(tete.getElement(), element)) {
+            if (tete.getElement() == element) {
                 tete = tete.getSuivant();
                 size--;
                 return;
@@ -66,7 +64,7 @@ public class ListeSimple {
     }
 
     public void supprimeTous(int element) {
-       tete = supprimeTousRecurs(element, tete);
+        tete = supprimeTousRecurs(element, tete);
     }
 
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
@@ -109,7 +107,7 @@ public class ListeSimple {
     }
 
     public Noeud getPrecedent(Noeud r) {
-    // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
+        // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
         Noeud courant = precedent.getSuivant();
         while (courant != r) {

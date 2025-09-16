@@ -115,7 +115,7 @@ public class ListeSimpleTest {
     @Test
     public void supprimeTousListeVide() {
         listeATester.supprimePremier(1);
-        assertNull(listeATester.getTete());
+        assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
     }
 
@@ -190,7 +190,7 @@ public class ListeSimpleTest {
     @Test
     public void inverserListeVide() {
         listeATester.inverser();
-        assertNull(listeATester.getTete());
+        assertNull(listeATester.tete);
     }
 
     @Test
