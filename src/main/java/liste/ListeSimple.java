@@ -130,8 +130,7 @@ public class ListeSimple {
             precedentR2 = getPrecedent(r2);
             precedentR2.setSuivant(tete);
             tete = r2;
-        }
-        else if (r2 == tete) {
+        } else {
             precedentR1 = getPrecedent(r1);
             precedentR1.setSuivant(tete);
             tete = r1;
@@ -140,5 +139,6 @@ public class ListeSimple {
         r2.setSuivant(r1.getSuivant());
         r1.setSuivant(temp);
     }
+
 
 }
