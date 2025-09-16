@@ -291,7 +291,7 @@ public class ListeSimpleTest {
         listeATester.ajout(1);
         Noeud r1 = listeATester.tete.getSuivant().getSuivant();
         Noeud r2 = listeATester.tete;
-        listeATester.echanger(r1, r2)
+        listeATester.echanger(r1, r2);
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1), Noeud(4))", listeATester.toString());
     }
 }
