@@ -265,4 +265,24 @@ public class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(3, listeATester.getSize());
     }
+
+    @Test
+    public void echangerMemeNoeudNeChangeRien() {
+        listeATester.ajout(2);
+        listeATester.ajout(1);
+        Noeud n = listeATester.tete;
+        listeATester.echanger(n, n);
+        assertEquals("ListeSimple(Noeud(1), Noeud(2))", listeATester.toString());
+    }
+
+    @Test
+    public void echangerQuandR2EstTete() {
+        listeATester.ajout(3);
+        listeATester.ajout(2);
+        listeATester.ajout(1);
+        Noeud r1 = listeATester.tete.getSuivant(); // 2
+        Noeud r2 = listeATester.tete; // 1 (head)
+        listeATester.echanger(r1, r2);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1), Noeud(3))", listeATester.toString());
+    }
 }
