@@ -15,7 +15,6 @@ public class ListeSimple {
     /**
      * Méthode pour ajouter un élément en tête de liste
      * @param element élément à ajouter
-     * @return void
      */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
@@ -26,7 +25,6 @@ public class ListeSimple {
      * Méthode pour modifier le premier élément de la liste égal à un certain élément
      * @param element élément à rechercher
      * @param nouvelleValeur nouvelle valeur à affecter
-     * @return void
      */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -40,7 +38,6 @@ public class ListeSimple {
      * Méthode pour modifier tous les éléments de la liste égaux à un certain élément
      * @param element élément à rechercher
      * @param nouvelleValeur description du deuxième paramètre
-     * @return void
      */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
@@ -72,7 +69,6 @@ public class ListeSimple {
     /**
      * Méthode pour supprimer le premier élément de la liste égal à un certain élément
      * @param element élément à rechercher
-     * @return void
      */
     public void supprimePremier(Object element) {
         if (tete != null) {
@@ -97,7 +93,6 @@ public class ListeSimple {
     /**
      * Méthode pour supprimer tous les éléments de la liste égaux à un certain élément
      * @param element élément à rechercher
-     * @return void
      */
     public void supprimeTous(int element) {
         tete = supprimeTousRecurs(element, tete);
@@ -142,7 +137,6 @@ public class ListeSimple {
 
     /**
      * Méthode pour inverser la liste
-     * @return void
      */
     public void inverser() {
         Noeud precedent = null;
@@ -176,7 +170,6 @@ public class ListeSimple {
      * Méthode pour échanger deux noeuds dans la liste
      * @param r1 description du premier paramètre
      * @param r2 description du deuxième paramètre
-     * @return void
      */
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
