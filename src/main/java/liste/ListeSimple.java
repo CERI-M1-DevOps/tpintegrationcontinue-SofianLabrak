@@ -5,7 +5,7 @@ public class ListeSimple {
     Noeud tete;
 
     /**
-     * Méthode pour obtenir la taille de la liste
+     * Méthode pour obtenir la taille de la liste.
      * @return Taille de la liste
      */
     public long getSize() {
