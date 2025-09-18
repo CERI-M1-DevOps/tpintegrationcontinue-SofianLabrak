@@ -1,0 +1,26 @@
+name: Documentation
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  genere-java-doc:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+
+      - name: Généré Javadoc
+        run: mvn -B javadoc:javadoc
+
+      - name: Deployer sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site/apidocs
